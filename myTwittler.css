@@ -68,9 +68,44 @@ header {
 }
 
 header h1 {
+	display: inline-block;
+	float: left;
 	font: bold 66px/99px "Comic Sans MS", Verdana, Helvetica, sans-serif;
 	color: white;
 	padding: 10px;
+}
+
+.login {
+	display: inline-block;
+	float: right;
+	vertical-align: top;  /* Doesn't seem to work?*/
+	color: white;
+}
+
+.login input {
+	margin-right: 5px;
+	margin-left: 3px;
+}
+
+.login-btn {
+	border: 1px solid grey;
+	box-shadow: 2px 3px 1px rgba(0, 0, 0, .3);
+	padding-right: 2px;
+	padding-left: 2px;
+}
+
+.login-btn:hover {
+	border: 2px solid black;
+	font-weight: bold;
+}
+
+.login-btn:active {
+	border: 2px solid black;
+	font-weight: bold;
+	box-shadow: none;
+	display: inline-block;
+	top: 3px;
+	left: 2px;
 }
 
 /* --- Button * --- */
@@ -143,6 +178,21 @@ div {
 }
 
 .tweet {
+	clear: both;
+	*zoom: 1;
+}
+
+header:before,
+header:after {
+	content: "";
+	display: table;
+}
+
+header:after {
+	clear: both;
+}
+
+header {
 	clear: both;
 	*zoom: 1;
 }
