@@ -21,6 +21,7 @@
           var tweet = {};
           tweet.user = visitor;
           tweet.message = message;
+          tweet.created_at = new Date(); // The only line added to the orignal function
           addTweet(tweet);
         };
 
