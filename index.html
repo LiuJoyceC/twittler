@@ -13,8 +13,6 @@
         var $body = $('body');
         //$body.html('');   <!-- Commented out so header is not erased -->
 
-        $('.login-field').focus();
-
         // Copied directly over from data_generator.js, because for some reason this function is not being read there.
         var writeTweet = function(message){
           if(!visitor){
@@ -26,6 +24,19 @@
           tweet.created_at = new Date(); // The only line added to the orignal function
           addTweet(tweet);
         };
+
+        var visitor = '';
+        var signedIn = false;
+        var placeCursor = function() {
+          if (signedIn) {
+            $('.tweet-field').focus();
+          } else {
+            $('.login-field').focus();
+          }
+        }
+
+        placeCursor();
+        $body.click(placeCursor);
 
         var createTweetLine = function(tweet) {
           var $tweet = $('<div class="tweet"></div>');
@@ -78,7 +89,6 @@
             }
             prevLength = newLength;
             clickWrapper(); //Without recalling this function, the new tweets cannot have their usernames clicked on.
-            $('.tweet-field').focus();
           }
         }
 
@@ -100,8 +110,6 @@
         };
         clickWrapper();
 
-        var visitor = '';
-        var signedIn = false;
 
         $('fieldset').on('keyup', function (e) {
           if (e.which == 13) {
@@ -121,7 +129,6 @@
               $('.tweet-label').text('What is on your mind, ' + visitor + '?');
               streams.users[visitor] = []; // Needed for writeTweet function to work
               signedIn = true;
-              $('.tweet-field').focus();
             }
 
           } else {
@@ -131,7 +138,6 @@
             $('.login-btn').text('Sign in');
             $('.add-own-tweet').addClass('hidden');
             signedIn = false;
-            $('.login-field').focus();
           }
         })
 
