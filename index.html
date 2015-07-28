@@ -64,9 +64,17 @@
         })
 
         var clickWrapper = function() { // The clickHandler is wrapped in another function so it can be recalled when new tweets are added, because the new tweets have not been 'activated' by the first call of the clickHandler
+
           $('.at-username').click(function() {
+            $('.hidden').removeClass('hidden');
             var selectedUser = $(this).data('username');
             $('.at-username').filter(function() {return $(this).data('username') !== selectedUser;}).closest('.tweet').addClass('hidden');
+          })
+
+          $('.hashtag').click(function() {
+            $('.hidden').removeClass('hidden');
+            var selectedTag = $(this).data('hashtag');
+            $('.hashtag').filter(function() {return $(this).data('hashtag') !== selectedTag;}).closest('.tweet').addClass('hidden');
           })
         };
         clickWrapper();
