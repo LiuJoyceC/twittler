@@ -44,13 +44,17 @@
               $tweet.insertAfter($('.tweet-begin'));
             }
             prevLength = newLength;
+            clickWrapper(); //Without recalling this function, the new tweets cannot have their usernames clicked on.
           }
         })
 
-        $('.at-username').click(function() {
-          var selectedUser = $(this).data('username');
-          $('.at-username').filter(function() {return $(this).data('username') !== selectedUser;}).closest('.tweet').remove();
-        })
+        var clickWrapper = function() { // The clickHandler is wrapped in another function so it can be recalled when new tweets are added, because the new tweets have not been 'activated' by the first call of the clickHandler
+          $('.at-username').click(function() {
+            var selectedUser = $(this).data('username');
+            $('.at-username').filter(function() {return $(this).data('username') !== selectedUser;}).closest('.tweet').remove();
+          })
+        };
+        clickWrapper();
 
       });
 
