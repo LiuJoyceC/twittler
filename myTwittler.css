@@ -85,6 +85,12 @@ button {
 	font: bold 20px/30px Verdana, sans-serif;
 }
 
+button:hover {
+	/*background: linear-gradient(#7F0AFF 15%, #2037DC, #119555);*/
+	background: grey;
+	color: #0F4C1E;
+}
+
 /* --- Tweets --- */
 
 div {
