@@ -53,7 +53,7 @@
           $('.tweet').filter('.hidden').removeClass('hidden');
         }
 
-        $('button').click(function() {
+        $('.new-tweets-btn').click(function() {
           unhideTweets();
           var newLength = streams.home.length;
           if (newLength > prevLength) {
@@ -128,7 +128,15 @@
 
     <!-- Tweets section -->
 
-    <button>See new Tweets!</button>
+    <fieldset class="addOwnTweet">
+      <label>
+        Write a tweet:
+        <input type="text" name="own-tweet" class="tweet-field">
+      </label>
+      <span class="tweet-btn">Tweet!</span>
+    </fieldset>
+
+    <button class="new-tweets-btn">See new Tweets!</button>
 
     <!-- Beginning divider for tweets: this should be the last item in the body section of the html -->
 

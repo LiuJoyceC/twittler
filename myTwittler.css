@@ -80,6 +80,7 @@ header h1 {
 	float: right;
 	vertical-align: top;
 	color: white;
+	padding: 10px;
 }
 
 .login-field {
@@ -90,7 +91,6 @@ header h1 {
 .login-btn {
 	border: 1px solid grey;
 	box-shadow: 2px 3px 1px rgba(0, 0, 0, .3);
-	padding-right: 2px;
 	padding-left: 2px;
 }
 
@@ -108,9 +108,9 @@ header h1 {
 	left: 2px;
 }
 
-/* --- Button * --- */
+/* --- Buttons --- */
 
-button {
+.new-tweets-btn {
 	background: #0F4C1E;
 	color: #06270F;
 	border-radius: 40%;
@@ -120,7 +120,7 @@ button {
 	font: bold 20px/30px Verdana, sans-serif;
 }
 
-button:hover {
+.new-tweets-btn:hover {
 	/*background: linear-gradient(#7F0AFF 15%, #2037DC, #119555);*/
 	background: grey;
 	color: #0F4C1E;
@@ -161,6 +161,11 @@ div {
 
 .hashtag:hover {
 	color: orange;
+}
+
+.addOwnTweet {
+	padding: 10px;
+	font: bold 14px/21px Georgia;
 }
 
 
