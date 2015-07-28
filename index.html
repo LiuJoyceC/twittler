@@ -110,6 +110,13 @@
           }
         })
 
+        $('.tweet-btn').click(function() {
+          var ownTweet = $('.tweet-field').val();
+          if (ownTweet !== '') {
+            writeTweet(ownTweet);
+          }
+        })
+
       });
 
     </script>
