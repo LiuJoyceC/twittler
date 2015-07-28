@@ -78,11 +78,11 @@ header h1 {
 .login {
 	display: inline-block;
 	float: right;
-	vertical-align: top;  /* Doesn't seem to work?*/
+	vertical-align: top;
 	color: white;
 }
 
-.login input {
+.login-field {
 	margin-right: 5px;
 	margin-left: 3px;
 }

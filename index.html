@@ -49,8 +49,12 @@
           index -= 1;
         }
 
+        var unhideTweets = function() {
+          $('.tweet').filter('.hidden').removeClass('hidden');
+        }
+
         $('button').click(function() {
-          $('.hidden').removeClass('hidden');
+          unhideTweets();
           var newLength = streams.home.length;
           if (newLength > prevLength) {
             for (index = prevLength; index < newLength; index++) {
@@ -66,18 +70,30 @@
         var clickWrapper = function() { // The clickHandler is wrapped in another function so it can be recalled when new tweets are added, because the new tweets have not been 'activated' by the first call of the clickHandler
 
           $('.at-username').click(function() {
-            $('.hidden').removeClass('hidden');
+            unhideTweets();
             var selectedUser = $(this).data('username');
             $('.at-username').filter(function() {return $(this).data('username') !== selectedUser;}).closest('.tweet').addClass('hidden');
           })
 
           $('.hashtag').click(function() {
-            $('.hidden').removeClass('hidden');
+            unhideTweets();
             var selectedTag = $(this).data('hashtag');
             $('.hashtag').filter(function() {return $(this).data('hashtag') !== selectedTag;}).closest('.tweet').addClass('hidden');
           })
         };
         clickWrapper();
+
+        var visitor = '';
+
+        $('.login-btn').click(function() {
+          visitor = $('.login-field').val();
+          
+          if (visitor !== '') {
+            $('.login-label').text('Welcome, ' + visitor + '!');
+            $('.login-field').addClass('hidden');
+            $('.login-btn').text('Sign out');
+          }
+        })
 
       });
 
@@ -91,8 +107,8 @@
       <h1>myTwittler</h1>
       <fieldset class="login">
         <label>
-          Username
-          <input type="text" name="username">
+          <span class="login-label">Username</span>
+          <input type="text" name="username" class="login-field">
         </label>
         <span class="login-btn">Sign in</span>
       </fieldset>
