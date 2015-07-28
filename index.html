@@ -85,14 +85,14 @@
             for (index = prevLength; index < newLength; index++) {
               var tweet = streams.home[index];
               var $tweet = createTweetLine(tweet);
-              $tweet.insertAfter($('.tweet-begin'));
+              $tweet.insertAfter($('#tweet-begin'));
             }
             prevLength = newLength;
             clickWrapper(); //Without recalling this function, the new tweets cannot have their usernames clicked on.
           }
         }
 
-        $('.new-tweets-btn').click(refreshTweets);
+        $('#new-tweets-btn').click(refreshTweets);
 
         var clickWrapper = function() { // The clickHandler is wrapped in another function so it can be recalled when new tweets are added, because the new tweets have not been 'activated' by the first call of the clickHandler
 
@@ -179,11 +179,11 @@
       <span id="tweet-btn" class="field-btn">Tweet!</span>
     </fieldset>
 
-    <button class="new-tweets-btn">See new Tweets!</button>
+    <button id="new-tweets-btn">See new Tweets!</button>
 
     <!-- Beginning divider for tweets: this should be the last item in the body section of the html -->
 
-    <div class="tweet-begin"></div>
+    <div id="tweet-begin"></div>
 
   </body>
 </html>

@@ -90,7 +90,7 @@ header h1 {
 
 /* --- Buttons --- */
 
-.new-tweets-btn {
+#new-tweets-btn {
 	background: #0F4C1E;
 	color: #06270F;
 	border-radius: 40%;
@@ -100,7 +100,7 @@ header h1 {
 	font: bold 20px/30px Verdana, sans-serif;
 }
 
-.new-tweets-btn:hover {
+#new-tweets-btn:hover {
 	/*background: linear-gradient(#7F0AFF 15%, #2037DC, #119555);*/
 	background: grey;
 	color: #0F4C1E;
