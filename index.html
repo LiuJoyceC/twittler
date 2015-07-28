@@ -99,6 +99,12 @@
         var visitor = '';
         var signedIn = false;
 
+        $('fieldset').on('keyup', function (e) {
+          if (e.which == 13) {
+            $(this).find('.field-btn').click();
+          }
+        })
+
         $('.login-btn').click(function() {
           visitor = $('.login-field').val();
 
@@ -148,7 +154,7 @@
           <span class="login-label">Username</span>
           <input type="text" name="username" class="login-field">
         </label>
-        <span class="login-btn">Sign in</span>
+        <span class="login-btn field-btn">Sign in</span>
       </fieldset>
     </header>
 
@@ -159,7 +165,7 @@
         <div class="tweet-label"></div>
         <input type="text" name="own-tweet" class="tweet-field">
       </label>
-      <span class="tweet-btn">Tweet!</span>
+      <span class="tweet-btn field-btn">Tweet!</span>
     </fieldset>
 
     <button class="new-tweets-btn">See new Tweets!</button>

@@ -106,22 +106,19 @@ header h1 {
 	color: #0F4C1E;
 }
 
-.login-btn,
-.tweet-btn {
+.field-btn {
 	border: 1px solid grey;
 	box-shadow: 2px 3px 1px rgba(0, 0, 0, .3);
 	padding-left: 2px;
 	padding-right: 2px;
 }
 
-.login-btn:hover,
-.tweet-btn:hover {
+.field-btn:hover {
 	border: 2px solid black;
 	font-weight: bold;
 }
 
-.login-btn:active,
-.tweet-btn:active {
+.field-btn:active {
 	border: 2px solid black;
 	font-weight: bold;
 	box-shadow: none;
