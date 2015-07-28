@@ -85,6 +85,34 @@ button {
 	font: bold 20px/30px Verdana, sans-serif;
 }
 
+/* --- Tweets --- */
+
+div {
+	color: #06270F;
+	font: 18px/27px "Times New Roman";
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.at-username {
+	font-weight: bold;
+}
+
+.at-username:hover {
+	color: blue;
+}
+
+.timestamp {
+	font-variant: small-caps;
+	font-size: 14px;
+	color: #0F4C1E;
+	display: inline-block;
+	float: right;
+}
+
+.timestamp:after {
+	clear: both;
+}
 
 
 /* --- Hidden class for filtering --- */

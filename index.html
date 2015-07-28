@@ -16,7 +16,7 @@
         var createTweetLine = function(tweet) {
           var $tweet = $('<div class="tweet"></div>');
           var $atUsername = $('<span class="at-username"></span>');
-          var $timestamp = $('<span class-"timestamp"></span>');
+          var $timestamp = $('<span class="timestamp"></span>');
           $atUsername.text('@' + tweet.user);
           $atUsername.attr('data-username', tweet.user);
           $timestamp.text(tweet.created_at);
