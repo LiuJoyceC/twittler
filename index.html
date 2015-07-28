@@ -28,7 +28,7 @@
               var tweet = streams.home[index];
               var $tweet = $('<div></div>');
               $tweet.text('@' + tweet.user + ': ' + tweet.message);
-              $tweet.insertAfter($('button'));
+              $tweet.insertAfter($('.tweet-begin'));
             }
           }
         })
@@ -48,6 +48,10 @@
     <!-- Tweets section -->
 
     <button>See new Tweets!</button>
+
+    <!-- Beginning divider for tweets: this should be the last item in the body section of the html -->
+
+    <div class="tweet-begin"></div>
 
   </body>
 </html>
