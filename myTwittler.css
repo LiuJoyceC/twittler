@@ -114,6 +114,33 @@ div {
 	clear: both;
 }
 
+.hashtag {
+	font-style: italic;
+}
+
+.hashtag:hover {
+	color: orange;
+}
+
+
+
+/* --- Clearfix --- */
+
+.tweet:before,
+.tweet:after {
+	content: "";
+	display: table;
+}
+
+.tweet:after {
+	clear: both;
+}
+
+.tweet {
+	clear: both;
+	*zoom: 1;
+}
+
 
 /* --- Hidden class for filtering --- */
 

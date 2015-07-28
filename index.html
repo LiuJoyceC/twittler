@@ -17,11 +17,23 @@
           var $tweet = $('<div class="tweet"></div>');
           var $atUsername = $('<span class="at-username"></span>');
           var $timestamp = $('<span class="timestamp"></span>');
+          var $hashtag = $('<span class="hashtag"></span>');
+          var messageTagged = tweet.message.split('#'); // Assume you can only have up to one hashtag per tweet
+          if (messageTagged.length == 1) {
+            var tag = '';
+            $hashtag.text('');
+          } else {
+            var tag = messageTagged[1];
+            $hashtag.text('#' + tag);
+          }
+
           $atUsername.text('@' + tweet.user);
           $atUsername.attr('data-username', tweet.user);
+          $hashtag.attr('data-hashtag', tag);
           $timestamp.text(tweet.created_at);
-          $tweet.text(/*'@' + tweet.user + */': ' + tweet.message + " ");
+          $tweet.text(/*'@' + tweet.user + */': ' + messageTagged[0] + " ");
           $tweet.prepend($atUsername);
+          $tweet.append($hashtag);
           $tweet.append($timestamp);
           return $tweet;
         };
