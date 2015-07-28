@@ -84,14 +84,26 @@
         clickWrapper();
 
         var visitor = '';
+        var signedIn = false;
 
         $('.login-btn').click(function() {
           visitor = $('.login-field').val();
-          
-          if (visitor !== '') {
-            $('.login-label').text('Welcome, ' + visitor + '!');
-            $('.login-field').addClass('hidden');
-            $('.login-btn').text('Sign out');
+
+          if (!signedIn) {
+            if (visitor !== '') {
+              $('.login-label').text('Welcome, ' + visitor + '!');
+              $('.login-field').addClass('hidden');
+              $('.login-btn').text('Sign out');
+              signedIn = true;
+            }
+
+          } else {
+            visitor = '';
+            $('.login-label').text('Username');
+            $('.login-field').removeClass('hidden');
+            $('.login-btn').text('Sign in');
+            signedIn = false;
+
           }
         })
 
