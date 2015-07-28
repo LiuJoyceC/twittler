@@ -127,6 +127,7 @@
         $('.tweet-btn').click(function() {
           var ownTweet = $('.tweet-field').val();
           if (ownTweet !== '') {
+            $('.tweet-field').val('');
             writeTweet(ownTweet);
             refreshTweets();
           }
