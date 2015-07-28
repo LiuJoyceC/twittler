@@ -132,7 +132,7 @@ header h1 {
 
 /* --- Tweets --- */
 
-div {
+.tweet {
 	color: #06270F;
 	font: 18px/27px "Times New Roman";
 	padding-left: 10px;
@@ -167,10 +167,15 @@ div {
 	color: orange;
 }
 
-.addOwnTweet {
+.add-own-tweet {
 	padding: 10px;
-	font: bold 22px/33px Georgia, sans-serif;
 	padding-bottom: 20px;
+}
+
+.tweet-label,
+.add-own-tweet {
+	font: bold 22px/33px Georgia, sans-serif;
+	color: #06270F;
 }
 
 .tweet-field {

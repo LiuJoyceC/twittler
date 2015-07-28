@@ -94,6 +94,8 @@
               $('.login-label').text('Welcome, ' + visitor + '!');
               $('.login-field').addClass('hidden');
               $('.login-btn').text('Sign out');
+              $('.add-own-tweet').removeClass('hidden');
+              $('.tweet-label').text('What is on your mind, ' + visitor + '?');
               signedIn = true;
             }
 
@@ -102,6 +104,7 @@
             $('.login-label').text('Username');
             $('.login-field').removeClass('hidden');
             $('.login-btn').text('Sign in');
+            $('.add-own-tweet').addClass('hidden');
             signedIn = false;
 
           }
@@ -128,10 +131,9 @@
 
     <!-- Tweets section -->
 
-    <fieldset class="addOwnTweet">
+    <fieldset class="add-own-tweet hidden">
       <label>
-        Write a tweet:
-        <br>
+        <div class="tweet-label"></div>
         <input type="text" name="own-tweet" class="tweet-field">
       </label>
       <span class="tweet-btn">Tweet!</span>
