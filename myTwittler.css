@@ -88,26 +88,6 @@ header h1 {
 	margin-left: 3px;
 }
 
-.login-btn {
-	border: 1px solid grey;
-	box-shadow: 2px 3px 1px rgba(0, 0, 0, .3);
-	padding-left: 2px;
-}
-
-.login-btn:hover {
-	border: 2px solid black;
-	font-weight: bold;
-}
-
-.login-btn:active {
-	border: 2px solid black;
-	font-weight: bold;
-	box-shadow: none;
-	display: inline-block;
-	top: 3px;
-	left: 2px;
-}
-
 /* --- Buttons --- */
 
 .new-tweets-btn {
@@ -124,6 +104,29 @@ header h1 {
 	/*background: linear-gradient(#7F0AFF 15%, #2037DC, #119555);*/
 	background: grey;
 	color: #0F4C1E;
+}
+
+.login-btn,
+.tweet-btn {
+	border: 1px solid grey;
+	box-shadow: 2px 3px 1px rgba(0, 0, 0, .3);
+	padding-left: 2px;
+}
+
+.login-btn:hover,
+.tweet-btn:hover {
+	border: 2px solid black;
+	font-weight: bold;
+}
+
+.login-btn:active,
+.tweet-btn:active {
+	border: 2px solid black;
+	font-weight: bold;
+	box-shadow: none;
+	display: inline-block;
+	top: 3px;
+	left: 2px;
 }
 
 /* --- Tweets --- */
