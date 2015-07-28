@@ -13,6 +13,17 @@
         var $body = $('body');
         //$body.html('');   <!-- Commented out so header is not erased -->
 
+        // Copied directly over from data_generator.js, because for some reason this function is not being read there.
+        var writeTweet = function(message){
+          if(!visitor){
+            throw new Error('set the global visitor property!');
+          }
+          var tweet = {};
+          tweet.user = visitor;
+          tweet.message = message;
+          addTweet(tweet);
+        };
+
         var createTweetLine = function(tweet) {
           var $tweet = $('<div class="tweet"></div>');
           var $atUsername = $('<span class="at-username"></span>');
@@ -96,6 +107,7 @@
               $('.login-btn').text('Sign out');
               $('.add-own-tweet').removeClass('hidden');
               $('.tweet-label').text('What is on your mind, ' + visitor + '?');
+              streams.users[visitor] = []; // Needed for writeTweet function to work
               signedIn = true;
             }
 
