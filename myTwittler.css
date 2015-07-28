@@ -75,7 +75,7 @@ header h1 {
 	padding: 10px;
 }
 
-.login {
+#login {
 	display: inline-block;
 	float: right;
 	vertical-align: top;
@@ -83,7 +83,7 @@ header h1 {
 	padding: 10px;
 }
 
-.login-field {
+#login-field {
 	margin-right: 5px;
 	margin-left: 3px;
 }

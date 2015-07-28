@@ -31,7 +31,7 @@
           if (signedIn) {
             $('.tweet-field').focus();
           } else {
-            $('.login-field').focus();
+            $('#login-field').focus();
           }
         }
 
@@ -117,14 +117,14 @@
           }
         })
 
-        $('.login-btn').click(function() {
-          visitor = $('.login-field').val();
+        $('#login-btn').click(function() {
+          visitor = $('#login-field').val();
 
           if (!signedIn) {
             if (visitor !== '') {
-              $('.login-label').text('Welcome, ' + visitor + '!');
-              $('.login-field').addClass('hidden');
-              $('.login-btn').text('Sign out');
+              $('#login-label').text('Welcome, ' + visitor + '!');
+              $('#login-field').addClass('hidden');
+              $('#login-btn').text('Sign out');
               $('.add-own-tweet').removeClass('hidden');
               $('.tweet-label').text('What is on your mind, ' + visitor + '?');
               streams.users[visitor] = []; // Needed for writeTweet function to work
@@ -133,9 +133,9 @@
 
           } else {
             visitor = '';
-            $('.login-label').text('Username');
-            $('.login-field').removeClass('hidden');
-            $('.login-btn').text('Sign in');
+            $('#login-label').text('Username');
+            $('#login-field').removeClass('hidden');
+            $('#login-btn').text('Sign in');
             $('.add-own-tweet').addClass('hidden');
             signedIn = false;
           }
@@ -160,12 +160,12 @@
 
     <header>
       <h1>myTwittler</h1>
-      <fieldset class="login">
+      <fieldset id="login">
         <label>
-          <span class="login-label">Username</span>
-          <input type="text" name="username" class="login-field">
+          <span id="login-label">Username</span>
+          <input type="text" name="username" id="login-field">
         </label>
-        <span class="login-btn field-btn">Sign in</span>
+        <span id="login-btn" class="field-btn">Sign in</span>
       </fieldset>
     </header>
 
