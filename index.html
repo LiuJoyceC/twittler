@@ -9,9 +9,10 @@
 
       $(document).ready(function(){
         var $body = $('body');
-        $body.html('');
+        //$body.html('');   <!-- Commented out so header is not erased -->
 
-        var index = streams.home.length - 1;
+        var prevLength = streams.home.length;
+        var index = prevLength - 1;
         while(index >= 0){
           var tweet = streams.home[index];
           var $tweet = $('<div></div>');
@@ -20,8 +21,33 @@
           index -= 1;
         }
 
+        $('button').click(function() {
+          var newLength = streams.home.length;
+          if (newLength > prevLength) {
+            for (index = prevLength; index < newLength; index++) {
+              var tweet = streams.home[index];
+              var $tweet = $('<div></div>');
+              $tweet.text('@' + tweet.user + ': ' + tweet.message);
+              $tweet.insertAfter($('button'));
+            }
+          }
+        })
+
       });
 
     </script>
+
+    <!-- HTML portion -->
+
+    <!-- Header -->
+
+    <header>
+      <h1>myTwittler</h1>
+    </header>
+
+    <!-- Tweets section -->
+
+    <button>See new Tweets!</button>
+
   </body>
 </html>
