@@ -12,7 +12,7 @@
         //$body.html('');   <!-- Commented out so header is not erased -->
 
         var createTweetLine = function(tweet) {
-          var $tweet = $('<div></div>');
+          var $tweet = $('<div class="tweet"></div>');
           var $atUsername = $('<span class="at-username"></span>');
           var $timestamp = $('<span class-"timestamp"></span>');
           $atUsername.text('@' + tweet.user);
@@ -44,6 +44,11 @@
               $tweet.insertAfter($('.tweet-begin'));
             }
           }
+        })
+
+        $('.at-username').click(function() {
+          var selectedUser = $(this).data('username');
+          $('.at-username').filter(function() {return $(this).data('username') !== selectedUser;}).closest('.tweet').remove();
         })
 
       });
