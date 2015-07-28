@@ -29,7 +29,7 @@
         var signedIn = false;
         var placeCursor = function() {
           if (signedIn) {
-            $('.tweet-field').focus();
+            $('#tweet-field').focus();
           } else {
             $('#login-field').focus();
           }
@@ -125,8 +125,8 @@
               $('#login-label').text('Welcome, ' + visitor + '!');
               $('#login-field').addClass('hidden');
               $('#login-btn').text('Sign out');
-              $('.add-own-tweet').removeClass('hidden');
-              $('.tweet-label').text('What is on your mind, ' + visitor + '?');
+              $('#add-own-tweet').removeClass('hidden');
+              $('#tweet-label').text('What is on your mind, ' + visitor + '?');
               streams.users[visitor] = []; // Needed for writeTweet function to work
               signedIn = true;
             }
@@ -136,15 +136,15 @@
             $('#login-label').text('Username');
             $('#login-field').removeClass('hidden');
             $('#login-btn').text('Sign in');
-            $('.add-own-tweet').addClass('hidden');
+            $('#add-own-tweet').addClass('hidden');
             signedIn = false;
           }
         })
 
-        $('.tweet-btn').click(function() {
-          var ownTweet = $('.tweet-field').val();
+        $('#tweet-btn').click(function() {
+          var ownTweet = $('#tweet-field').val();
           if (ownTweet !== '') {
-            $('.tweet-field').val('');
+            $('#tweet-field').val('');
             writeTweet(ownTweet);
             refreshTweets();
           }
@@ -171,12 +171,12 @@
 
     <!-- Tweets section -->
 
-    <fieldset class="add-own-tweet hidden">
+    <fieldset id="add-own-tweet" class="hidden">
       <label>
-        <div class="tweet-label"></div>
-        <input type="text" name="own-tweet" class="tweet-field">
+        <div id="tweet-label"></div>
+        <input type="text" name="own-tweet" id="tweet-field">
       </label>
-      <span class="tweet-btn field-btn">Tweet!</span>
+      <span id="tweet-btn" class="field-btn">Tweet!</span>
     </fieldset>
 
     <button class="new-tweets-btn">See new Tweets!</button>

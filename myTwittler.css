@@ -164,18 +164,18 @@ header h1 {
 	color: orange;
 }
 
-.add-own-tweet {
+#add-own-tweet {
 	padding: 10px;
 	padding-bottom: 20px;
 }
 
-.tweet-label,
-.add-own-tweet {
+#tweet-label,
+#add-own-tweet {
 	font: bold 22px/33px Georgia, sans-serif;
 	color: #06270F;
 }
 
-.tweet-field {
+#tweet-field {
 	width: 40%;
 	height: 22px;
 	font: 18px "Comic Sans MS", Arial, sans-serif;
