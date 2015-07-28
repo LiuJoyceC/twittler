@@ -64,7 +64,7 @@
           $('.tweet').filter('.hidden').removeClass('hidden');
         }
 
-        $('.new-tweets-btn').click(function() {
+        var refreshTweets = function() {
           unhideTweets();
           var newLength = streams.home.length;
           if (newLength > prevLength) {
@@ -76,7 +76,9 @@
             prevLength = newLength;
             clickWrapper(); //Without recalling this function, the new tweets cannot have their usernames clicked on.
           }
-        })
+        }
+
+        $('.new-tweets-btn').click(refreshTweets);
 
         var clickWrapper = function() { // The clickHandler is wrapped in another function so it can be recalled when new tweets are added, because the new tweets have not been 'activated' by the first call of the clickHandler
 
@@ -126,6 +128,7 @@
           var ownTweet = $('.tweet-field').val();
           if (ownTweet !== '') {
             writeTweet(ownTweet);
+            refreshTweets();
           }
         })
 
